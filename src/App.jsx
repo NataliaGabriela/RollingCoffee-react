@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <NavBar></NavBar>
-      <h1>hola mundo</h1>
+      
     </>
   )
 }
