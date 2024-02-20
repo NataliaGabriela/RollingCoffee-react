@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import NavBar from "./components/common/NavBar";
+import Footer from "./components/common/Footer";
 import { Container } from "react-bootstrap";
-import Inicio from "./components/Inicio";
+import Inicio from "./components/pages/Inicio";
 function App() {
   return (
     <>
@@ -13,7 +13,7 @@ function App() {
       </Container>
       <Footer></Footer>
     </>
-  );
+  )
 }
 
 export default App;
