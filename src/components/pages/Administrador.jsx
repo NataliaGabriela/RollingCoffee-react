@@ -1,10 +1,11 @@
-import {Table, Image, Container} from 'react-bootstrap';
+import {Table, Container} from 'react-bootstrap';
+import ItemProducto from '../ItemProducto';
 const Administrador = () => {
     return (
     <Container> 
         <h4 className='display-4 my-3'>Productos Disponibles</h4>
         <hr />
-        
+
     <Table striped bordered hover className='my-3'>
       <thead>
         <tr>
@@ -17,14 +18,7 @@ const Administrador = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Cafe Americano</td>
-          <td>$1500</td>
-          <td><Image src='../../../assets/cafeAmericano.jpg' fluid width={200}/></td>
-          <td>Bebida Caliente</td>
-          <td>Editar Borrar</td>
-        </tr>
+       <ItemProducto></ItemProducto>
       </tbody>
     </Table>
     </Container> 
