@@ -7,17 +7,20 @@ import { Container } from "react-bootstrap";
 import Inicio from "./components/pages/Inicio";
 import Error from "./components/pages/Error";
 import Administrador from "./components/pages/Administrador";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 function App() {
   return (
-    <>
-      <NavBar></NavBar>
-      <Container fluid className="mainPage">
-        {/*<Inicio></Inicio>*/}
-        {/*<Error></Error>*/}
-        <Administrador></Administrador>
-      </Container>
-      <Footer></Footer>
-    </>
+   <BrowserRouter>
+   <NavBar></NavBar>
+    <Routes>
+      <Route exact path="/" element={<Inicio></Inicio>}></Route>
+      <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
+      <Route exact path="/administrador/crear" element={<Administrador></Administrador>}></Route>
+      <Route exact path="/administrador/editar" element={<Administrador></Administrador>}></Route>
+      <Route path="*" element={<Error></Error>}></Route>
+    </Routes>
+    <Footer></Footer>
+   </BrowserRouter>
   )
 }
 
