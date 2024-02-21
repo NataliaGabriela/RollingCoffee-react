@@ -1,15 +1,15 @@
 import { Button, Image } from "react-bootstrap";
 
-const ItemProducto = () => {
+const ItemProducto = ({producto}) => {
   return (
     <tr>
-      <td>1</td>
-      <td>Cafe Americano</td>
-      <td>$1500</td>
+      <td>{producto.id}</td>
+      <td>{producto.nombreProducto}</td>
+      <td>{producto.precio}</td>
       <td>
-        <Image src="../../../assets/cafeAmericano.jpg" fluid width={200} />
+        <Image src={producto.imagen} fluid width={200} />
       </td>
-      <td>Bebida Caliente</td>
+      <td>{producto.categoria}</td>
       <td className="text-center">
         <Button variant="warning" className="me-lg-2">
           <i className="bi bi-pencil-square"></i>

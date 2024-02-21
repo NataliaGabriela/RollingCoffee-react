@@ -4,9 +4,9 @@
             "nombreProducto": "café",
             "precio":1000,
             "categoria":"Infusiones",
-            "descripcion-breve":"cafe rico",
-            "descripcion-amplia":"bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-            "imagen": "https://www.pexels.com/es-es/foto/persona-que-realiza-el-arte-del-cafe-302899/",
+            "descripcion_breve":"cafe rico",
+            "descripcion_amplia":"bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
+            "imagen":"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "disponibilidad": true,
             "id":"1"
         },
@@ -14,9 +14,9 @@
             "nombreProducto": "té",
             "precio":500,
             "categoria":"Infusiones",
-            "descripcion-breve":"té rico",
-            "descripcion-amplia":"bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-            "imagen": "https://www.pexels.com/es-es/foto/persona-que-realiza-el-arte-del-cafe-302899/",
+            "descripcion_breve":"té rico",
+            "descripcion_amplia":"bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
+            "imagen":"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "disponibilidad": true,
             "id":"2"
         }
