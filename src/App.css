@@ -1,25 +1,31 @@
-.ImgRollingCoffe{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.ImgRollingCoffe {
   width: 200px;
 }
-#root{
+#root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-.mainPage{
+.mainSection {
   flex-grow: 1;
 }
-.bgGreen{
+.bgGreen {
   background: rgb(11, 41, 11);
 }
-.textGreen{
+.textGreen {
   color: rgb(11, 41, 11);
 }
-.imagenError{
- position: relative;
-margin: 0 auto;
+.imagenError {
+  position: relative;
+  margin: 0 auto;
 }
-.botonError{
+.botonError {
   width: 200px;
-  margin: 50px  auto;
+  margin: 50px auto;
 }
