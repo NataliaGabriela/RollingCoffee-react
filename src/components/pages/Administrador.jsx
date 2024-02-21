@@ -1,4 +1,4 @@
-import { Table, Container, Button } from "react-bootstrap";
+import { Table, Container} from "react-bootstrap";
 import ItemProducto from "../ItemProducto";
 import { Link } from "react-router-dom";
 const Administrador = () => {
