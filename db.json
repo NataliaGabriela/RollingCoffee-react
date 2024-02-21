@@ -1,0 +1,14 @@
+{
+    "productos":[
+        {
+            "nombreProducto": "café",
+            "precio":1000,
+            "categoria":"Infusiones",
+            "descripcion-breve":"cafe rico",
+            "descripcion-amplia":"bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
+            "imagen": "https://www.pexels.com/es-es/foto/persona-que-realiza-el-arte-del-cafe-302899/",
+            "disponibilidad": true,
+            "id":"1"
+        }
+    ]
+}
