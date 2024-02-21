@@ -1,7 +1,23 @@
-import { Table, Container, Button } from "react-bootstrap";
+import { Table, Container} from "react-bootstrap";
 import ItemProducto from "../ItemProducto";
 import { Link } from "react-router-dom";
+import { useEffect, useState} from "react";
+import { leerProductosAPI } from "../../helpers/queries";
 const Administrador = () => {
+
+    const [productos, setProductos] = useState([]);
+    useEffect(()=>{
+      traerProductos();
+    },[])
+    const traerProductos = async()=>{
+      try{
+       const listaProductosAPI = await leerProductosAPI();
+       setProductos(listaProductosAPI);
+      }catch(error){
+        console.log(error)
+      }
+    }
+  
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center mt-5">
@@ -23,7 +39,10 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          <ItemProducto></ItemProducto>
+          {
+            productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+          }
+          
         </tbody>
       </Table>
     </Container>
