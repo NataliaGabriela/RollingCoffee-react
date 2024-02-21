@@ -8,6 +8,7 @@ import Inicio from "./components/pages/Inicio";
 import Error from "./components/pages/Error";
 import Administrador from "./components/pages/Administrador";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import DetalleProducto from "./components/pages/DetalleProducto";
 function App() {
   return (
    <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
       <Route exact path="/administrador/crear" element={<Administrador></Administrador>}></Route>
       <Route exact path="/administrador/editar" element={<Administrador></Administrador>}></Route>
+      <Route exact path="/detalleproducto" element={<DetalleProducto></DetalleProducto>}></Route>
       <Route path="*" element={<Error></Error>}></Route>
     </Routes>
     <Footer></Footer>
