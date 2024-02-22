@@ -1,6 +1,29 @@
 import { Container, Row, Image } from "react-bootstrap";
 import "../../App.css";
+import{useParams} from "react-router-dom";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 const DetalleProducto = () => {
+  const {id} = useParams();
+  const [producto, setProducto] = useState({});
+  useEffect(()=>{
+    //buscar el producto que quiero maquetar
+    cargarDetalle();
+  },[])
+  const cargarDetalle = async()=>{
+    const respuesta = await obtenerProductoAPI(id)
+    if (respuesta.status === 200) {
+      //mostrar el producto en la card
+      const datoProducto = await respuesta.jason();
+      setProducto(datoProducto);
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `Intente crear este producto en unos minutos`,
+        icon: "error"
+      });
+    }
+  }
   return (
     <Container>
       <Row className="border border-1 rounded m-5 p-3">
