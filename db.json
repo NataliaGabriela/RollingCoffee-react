@@ -1,24 +1,33 @@
 {
-    "productos":[
-        {
-            "nombreProducto": "café",
-            "precio":1000,
-            "categoria":"Infusiones",
-            "descripcion_breve":"cafe rico",
-            "descripcion_amplia":"bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-            "imagen":"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "disponibilidad": true,
-            "id":"1"
-        },
-        {
-            "nombreProducto": "té",
-            "precio":500,
-            "categoria":"Infusiones",
-            "descripcion_breve":"té rico",
-            "descripcion_amplia":"bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-            "imagen":"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "disponibilidad": true,
-            "id":"2"
-        }
-    ]
+  "productos": [
+    {
+      "nombreProducto": "café",
+      "precio": 1000,
+      "categoria": "Infusiones",
+      "descripcion_breve": "cafe rico",
+      "descripcion_amplia": "bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "disponibilidad": true,
+      "id": "1"
+    },
+    {
+      "nombreProducto": "té",
+      "precio": 500,
+      "categoria": "Infusiones",
+      "descripcion_breve": "té rico",
+      "descripcion_amplia": "bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "disponibilidad": true,
+      "id": "2"
+    },
+    {
+      "id": "0f45",
+      "nombreProducto": "alfajor",
+      "precio": "500",
+      "imagen": "https://rolling-store-img.netlify.app/img/Nacionales/river.jpg",
+      "categoria": "3",
+      "descripcion_breve": "ghjjkhhhgggggggggg",
+      "descripcion_amplia": "jhgggggggkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkktffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    }
+  ]
 }
