@@ -9,3 +9,18 @@ export const leerProductosAPI = async() =>{
         console.log(error)
     }
 }
+//POST
+export const crearProductoAPI = async(productoNuevo)=>{
+    try{
+        const respuesta = await fetch(URI_PRODUCTOS,{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(productoNuevo)
+        })
+        return respuesta;//devuelve una promesa
+    }catch(error){
+        console.log(error)
+    }
+}
