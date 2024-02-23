@@ -2,12 +2,11 @@
   "productos": [
     {
       "nombreProducto": "café",
-      "precio": 1000,
+      "precio": "1500",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "Infusiones",
       "descripcion_breve": "cafe rico",
       "descripcion_amplia": "bebida de café cocentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponibilidad": true,
       "id": "1"
     },
     {
@@ -46,6 +45,15 @@
       "categoria": "3",
       "descripcion_breve": "Mini Torta Chocolate y Nuez",
       "descripcion_amplia": "Brownie, helado de chocolate c/nuez , pionono, dulce de leche repostero y ganache de chocolate"
+    },
+    {
+      "id": "0100",
+      "nombreProducto": "medialuna",
+      "precio": "500",
+      "imagen": "https://img.freepik.com/foto-gratis/croissants-tabla-cortar-madera_1150-28480.jpg?w=740&t=st=1708262912~exp=1708263512~hmac=5ebfb99316a3238ed7a1e9e6efee6d99ad3410b35b482664a5e0bdeda7f4c00d",
+      "categoria": "Dulce",
+      "descripcion_breve": "Medialuna con masa de hojaldre",
+      "descripcion_amplia": "La medialuna es sinónimo de textura crujiente y sabor irresistible, cualidades que lo han convertido en un producto al que pocos pueden resistirse."
     }
   ]
 }

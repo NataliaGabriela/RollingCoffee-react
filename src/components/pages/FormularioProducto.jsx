@@ -1,26 +1,26 @@
 import { Form, Button, Container } from "react-bootstrap";
-
 import { useForm } from "react-hook-form";
-import { crearProductoAPI, obtenerProductoAPI } from "../../helpers/queries";
+import {crearProductoAPI,editarProductoAPI,obtenerProductoAPI} from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const FormularioProducto = ({editar,titulo}) => {
+const FormularioProducto = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-    setValue
+    setValue,
   } = useForm();
-  const {id} = useParams();
-  useEffect(()=>{
-   //solo si estoy editando
-   if (editar) {
-    cargarDatosFormulario();
-   }
-  },[]);
+  const { id } = useParams();
+  const navegacion = useNavigate();
+  useEffect(() => {
+    //solo si estoy editando
+    if (editar) {
+      cargarDatosFormulario();
+    }
+  }, []);
   const cargarDatosFormulario = async () => {
     const respuesta = await obtenerProductoAPI(id);
     if (respuesta.status === 200) {
@@ -40,32 +40,50 @@ const FormularioProducto = ({editar,titulo}) => {
       });
     }
   };
-  const productoValidado = async(producto) => {
-    if (editar) {
-      
-    } else {
-      console.log(producto);
-    //logica cuando quiero crear un producto
-    const respuesta = await crearProductoAPI(producto);
-    if (respuesta.satus === 201) {
-      //mensaje
-      Swal.fire({
-        title: "Producto creado",
-        text: `El producto: ${producto.nombreProducto} fue creado correctamente`,
-        icon: "success"
-      });
-      reset();
-    }else{
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: `Intente crear este producto en unos minutos`,
-        icon: "error"
-      });
+  const productoValidado = async (producto) => {
+    try {
+      if (editar) {
+        //agregar la logica para editar el producto con la api
+        const respuesta = await editarProductoAPI(id, producto);
+        if (respuesta.status === 200) {
+          Swal.fire({
+            title: "Producto editado",
+            text: `El producto: ${producto.nombreProducto} fue editado correctamente`,
+            icon: "success",
+          });
+          //redireccionar
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: "Intente modificar este producto en unos minutos",
+            icon: "error",
+          });
+        }
+      } else {
+        //Esta es la logica cuando quiero crear un producto
+        const respuesta = await crearProductoAPI(producto);
+        if (respuesta.status === 201) {
+          //mensaje para el usuario
+          Swal.fire({
+            title: "Producto creado",
+            text: `El producto: ${producto.nombreProducto} fue creado correctamente`,
+            icon: "success",
+          });
+          reset();
+        } else {
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: "Intente crear este producto en unos minutos",
+            icon: "error",
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
     }
-    
   };
-    }
-    
+
   return (
     <Container>
       <h1 className="display-4">{titulo}</h1>
