@@ -29,3 +29,8 @@
   width: 200px;
   margin: 50px auto;
 }
+.card-img-top-nueva {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
