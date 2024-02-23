@@ -17,8 +17,8 @@ function App() {
       <Route exact path="/" element={<Inicio></Inicio>}></Route>
       <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>}></Route>
       <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
-      <Route exact path="/administrador/crear" element={<FormularioProducto></FormularioProducto>}></Route>
-      <Route exact path="/administrador/editar" element={<Administrador></Administrador>}></Route>
+      <Route exact path="/administrador/crear" element={<FormularioProducto editar={false} titulo={'Nuevo Producto'}></FormularioProducto>}></Route>
+      <Route exact path="/administrador/editar/:id" element={<FormularioProducto editar={true} titulo={'Editar Producto'}></FormularioProducto>}></Route>
       <Route exact path="/formulario" element={<FormularioProducto></FormularioProducto>}></Route>
       <Route path="*" element={<Error></Error>}></Route>
     </Routes>

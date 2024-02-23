@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
-const FormularioProducto = () => {
+const FormularioProducto = ({editar,titulo}) => {
   const {
     register,
     handleSubmit,
@@ -12,7 +12,11 @@ const FormularioProducto = () => {
     reset
   } = useForm();
   const productoValidado = async(producto) => {
-    console.log(producto);
+    if (editar) {
+      
+    } else {
+      console.log(producto);
+    //logica cuando quiero crear un producto
     const respuesta = await crearProductoAPI(producto);
     if (respuesta.satus === 201) {
       //mensaje
@@ -31,9 +35,11 @@ const FormularioProducto = () => {
     }
     
   };
+    }
+    
   return (
     <Container>
-      <h1 className="display-4">Nuevo Producto</h1>
+      <h1 className="display-4">{titulo}</h1>
       <hr></hr>
       <Form className="my-3" onSubmit={handleSubmit(productoValidado)}>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
