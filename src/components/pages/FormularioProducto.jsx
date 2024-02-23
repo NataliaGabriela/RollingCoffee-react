@@ -1,18 +1,51 @@
 import { Form, Button, Container } from "react-bootstrap";
 
 import { useForm } from "react-hook-form";
-import { crearProductoAPI } from "../../helpers/queries";
+import { crearProductoAPI, obtenerProductoAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const FormularioProducto = () => {
+const FormularioProducto = ({editar,titulo}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
+    setValue
   } = useForm();
+  const {id} = useParams();
+  useEffect(()=>{
+   //solo si estoy editando
+   if (editar) {
+    cargarDatosFormulario();
+   }
+  },[]);
+  const cargarDatosFormulario = async () => {
+    const respuesta = await obtenerProductoAPI(id);
+    if (respuesta.status === 200) {
+      const productoBuscado = await respuesta.json();
+      //cargar los datos del productoBuscado en el formulario
+      setValue("nombreProducto", productoBuscado.nombreProducto);
+      setValue("precio", productoBuscado.precio);
+      setValue("categoria", productoBuscado.categoria);
+      setValue("descripcion_breve", productoBuscado.descripcion_breve);
+      setValue("descripcion_amplia", productoBuscado.descripcion_amplia);
+      setValue("imagen", productoBuscado.imagen);
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: "Intente realizar esta operacion en unos minutos",
+        icon: "error",
+      });
+    }
+  };
   const productoValidado = async(producto) => {
-    console.log(producto);
+    if (editar) {
+      
+    } else {
+      console.log(producto);
+    //logica cuando quiero crear un producto
     const respuesta = await crearProductoAPI(producto);
     if (respuesta.satus === 201) {
       //mensaje
@@ -31,9 +64,11 @@ const FormularioProducto = () => {
     }
     
   };
+    }
+    
   return (
     <Container>
-      <h1 className="display-4">Nuevo Producto</h1>
+      <h1 className="display-4">{titulo}</h1>
       <hr></hr>
       <Form className="my-3" onSubmit={handleSubmit(productoValidado)}>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -88,8 +123,8 @@ const FormularioProducto = () => {
             {...register("imagen", {
               required: "La imagen del producto es obligatoria",
               pattern: {
-                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/,
-                message: "Debe ingresar una imagen valida(jpg|gif|png)",
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/,
+                message: "Debe ingresar una imagen valida(jpg|gif|png|jpeg)",
               },
             })}
           />
@@ -106,10 +141,10 @@ const FormularioProducto = () => {
             })}
           >
             <option>Seleccione una opción</option>
-            <option value="1">Infusiones</option>
-            <option value="2">Batidos</option>
-            <option value="3">Dulce</option>
-            <option value="4">Salado</option>
+            <option value="Infusiones">Infusiones</option>
+            <option value="Batidos">Batidos</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
